@@ -1,0 +1,23 @@
+name: check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  links:
+    name: 链接检查
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 检查 Markdown 里的链接
+        uses: lycheeverse/lychee-action@v2
+        with:
+          # --no-progress 减少输出噪音；fail: true 让死链直接把任务判失败
+          args: --verbose --no-progress --accept 200,204,206,301,302,403,429 './**/*.md'
+          fail: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
