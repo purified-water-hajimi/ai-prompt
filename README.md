@@ -1,4 +1,6 @@
-﻿# ai-prompt
+# ai-prompt
+
+[![check](https://github.com/purified-water-hajimi/ai-prompt/actions/workflows/check.yml/badge.svg)](https://github.com/purified-water-hajimi/ai-prompt/actions/workflows/check.yml)
 
 > 我平时用 AI 干活时，反复用到的几条提示词。每条都能直接复制去用。
 >
